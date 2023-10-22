@@ -1,4 +1,4 @@
-import { GetPartsUseCase } from "@breakfeastwheel/domain";
+import { GetPartsUseCase } from "@breakfeastwheel-domain";
 import {
   PartsPresenter,
   PartsPresenterVM,

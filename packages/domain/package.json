@@ -1,5 +1,5 @@
 {
-  "name": "@breakfeastwheel/domain",
+  "name": "@ichtus/breakfeastwheel-domain",
   "version": "1.0.0",
   "description": "",
   "main": "dist/src/index.js",

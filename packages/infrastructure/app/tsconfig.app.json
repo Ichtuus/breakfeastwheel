@@ -1,5 +1,5 @@
 {
-  "extends": "../../../tsconfig.json",
+  "extends": ["../../../tsconfig.json", "@vue/tsconfig/tsconfig.dom.json"],
   "compilerOptions": {
     "target": "esnext",
     "module": "esnext",
@@ -13,12 +13,12 @@
     "sourceMap": true,
     "types": ["jest"],
     "paths": {
-      "@breakfeastwheel/domain": ["domain/src"],
-      "@breakfeastwheel/adapters": ["adapters/src"],
+      "@ichtus/breakfeastwheel-domain": ["domain/src"],
+      "@ichtus/breakfeastwheel-adapters": ["adapters/src"],
       "@/*": ["infrastructure/app/src/*"]
     },
     "lib": ["esnext", "dom", "dom.iterable", "scripthost"]
   },
-  "include": ["src/**/*.ts", "src/**/*.tsx", "src/**/*.vue", "tests/**/*.ts", "tests/**/*.tsx"],
+  "include": ["src/**/*.ts", "src/**/*.tsx", "src/**/*.vue", "tests/**/*.ts", "tests/**/*.tsx", "env.d.ts", "src/**/*", "src/**/*.vue"],
   "exclude": ["node_modules"]
 }

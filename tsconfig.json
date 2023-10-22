@@ -16,8 +16,8 @@
     "forceConsistentCasingInFileNames": true,
     "declaration": true,
     "paths": {
-      "@breakfeastwheel/domain": ["domain/src"],
-      "@breakfeastwheel/adapters": ["adapters/src"]
+      "@breakfeastwheel-domain": ["domain/src"],
+      "@breakfeastwheel-adapters": ["adapters/src"]
     }
   }
 }

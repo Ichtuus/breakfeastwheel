@@ -1,4 +1,4 @@
-import { GetPartsPresentation, Part } from "@breakfeastwheel/domain";
+import { GetPartsPresentation, Part } from "@breakfeastwheel-domain";
 import { Presenter } from "./Presenter";
 
 export class PartsPresenterVM {
