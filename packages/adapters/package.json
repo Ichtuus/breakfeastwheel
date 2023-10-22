@@ -1,6 +1,6 @@
 {
   "name": "@ichtus/breakfeastwheel-adapters",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "main": "dist/adapters/src/index.js",
   "files": [
     "dist/**/*"
@@ -12,7 +12,7 @@
   "author": "Nicolas Diarra",
   "license": "ISC",
   "dependencies": {
-    "@ichtus/breakfeastwheel-domain": "1.0.1"
+    "@ichtus/breakfeastwheel-domain": "1.0.2"
   },
   "devDependencies": {
     "@types/jest": "^29.5.6",
