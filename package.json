@@ -1,0 +1,14 @@
+{
+  "name": "breakfeastwheel",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "dev": "npm run dev --prefix packages/infrastructure/app",
+    "install:app:dependencies": "npm install --prefix infrastructure/app"
+  },
+  "author": "Nicolas Diarra",
+  "license": "ISC",
+  "devDependencies": {
+    "typescript": "^5.2.2"
+  }
+}
