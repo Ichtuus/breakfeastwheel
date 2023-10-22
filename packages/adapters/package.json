@@ -1,6 +1,6 @@
 {
   "name": "@ichtus/breakfeastwheel-adapters",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "main": "dist/adapters/src/index.js",
   "files": [
     "dist/**/*"
