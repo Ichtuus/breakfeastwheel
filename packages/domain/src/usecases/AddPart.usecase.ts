@@ -1,10 +1,10 @@
-import { PartBuilder } from "domain/src/entities/part/PartBuilder";
+import { PartBuilder } from "../entities/part/PartBuilder";
 import {
   AddPartPresentation,
   NewPartFields,
-} from "domain/src/ports/presenters/AddPartPresentation.presenter";
-import { PartRepository } from "domain/src/ports/repositories/Part.repository";
-import { AddPartRequest } from "domain/src/ports/requests/AddPartRequest";
+} from "../ports/presenters/AddPartPresentation.presenter";
+import { PartRepository } from "../ports/repositories/Part.repository";
+import { AddPartRequest } from "../ports/requests/AddPartRequest";
 
 export class AddPartUseCase {
   constructor(private partRepository: PartRepository) {}
