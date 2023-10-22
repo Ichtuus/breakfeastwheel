@@ -19,8 +19,8 @@
     "pinia": "^2.1.7",
     "vue": "^3.3.4",
     "vue-router": "^4.2.5",
-    "@ichtus/breakfeastwheel-adapters": "1.0.4",
-    "@ichtus/breakfeastwheel-domain": "1.0.4"
+    "@ichtus/breakfeastwheel-adapters": "1.0.5",
+    "@ichtus/breakfeastwheel-domain": "1.0.5"
   },
   "devDependencies": {
     "@rushstack/eslint-patch": "^1.3.3",
