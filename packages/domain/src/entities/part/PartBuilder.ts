@@ -1,4 +1,4 @@
-import { generateUniqueId } from "domain/utils";
+import { generateUniqueId } from "domain/src/utils";
 import { Part } from "./Part";
 
 export class PartBuilder {
