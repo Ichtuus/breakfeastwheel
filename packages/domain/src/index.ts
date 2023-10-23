@@ -4,9 +4,9 @@ export * from "./usecases/GetParts.usecase";
 export * from "./entities/part/Part";
 export * from "./entities/part/PartBuilder";
 
-export * from "./ports/presenters/AddPartPresentation.presenter";
-export * from "./ports/presenters/GetPartsPresentation.presenter";
+export * from "./ports/presenters/AddPartPresenter";
+export * from "./ports/presenters/GetPartsPresenter";
 
-export * from "./ports/repositories/Part.repository";
+export * from "./ports/repositories/PartRepository";
 
 export * from "./ports/requests/AddPartRequest";

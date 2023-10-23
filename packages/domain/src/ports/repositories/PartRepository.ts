@@ -1,4 +1,4 @@
-import { Part } from "domain/src/entities/part/Part";
+import { Part } from "../../entities/part/Part";
 
 export interface PartRepository {
   getParts(): Promise<Part[] | null>;

@@ -1,5 +1,5 @@
 import { Part } from "domain/src/entities/part/Part";
-import { PartRepository } from "domain/src/ports/repositories/Part.repository";
+import { PartRepository } from "domain/src/ports/repositories/PartRepository";
 
 const key = "ALL_PARTS";
 

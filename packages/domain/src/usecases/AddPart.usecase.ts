@@ -2,8 +2,8 @@ import { PartBuilder } from "../entities/part/PartBuilder";
 import {
   AddPartPresentation,
   NewPartFields,
-} from "../ports/presenters/AddPartPresentation.presenter";
-import { PartRepository } from "../ports/repositories/Part.repository";
+} from "../ports/presenters/AddPartPresenter";
+import { PartRepository } from "../ports/repositories/PartRepository";
 import { AddPartRequest } from "../ports/requests/AddPartRequest";
 
 export class AddPartUseCase {

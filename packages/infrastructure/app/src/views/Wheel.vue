@@ -1,5 +1,6 @@
 <script setup lang="ts">
-import { inject, onMounted } from 'vue'
+import { PARTS_CONTROLLER_FACTORY } from '@/DependencyInjection'
+import { inject, onMounted, ref } from 'vue'
 
 const prizes = [
   {
@@ -75,12 +76,19 @@ const createConicGradient = () => {
   }
 }
 
+const wheelController = inject(PARTS_CONTROLLER_FACTORY)!.build()
+const vm = ref(wheelController.vm)
+
 onMounted(() => {
   createPrizeNodes()
   createConicGradient()
-})
 
-const wheelController = inject(PARTS_CONTROLLER_FACTORY)!.build()
+  wheelController.subscribeVM((updateVM) => {
+    vm.value = { ...updateVM }
+    console.log('merde', vm.value)
+  })
+  wheelController.fetchParts()
+})
 </script>
 
 <template>

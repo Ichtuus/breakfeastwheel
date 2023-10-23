@@ -1,5 +1,5 @@
-import { GetPartsPresentation } from "../ports/presenters/GetPartsPresentation.presenter";
-import { PartRepository } from "../ports/repositories/Part.repository";
+import { GetPartsPresentation } from "../ports/presenters/GetPartsPresenter";
+import { PartRepository } from "../ports/repositories/PartRepository";
 
 export class GetPartsUseCase {
   constructor(private partRepository: PartRepository) {}
