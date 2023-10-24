@@ -6,14 +6,16 @@ const key = "ALL_PARTS";
 export class PartRepositoryLocalStorage implements PartRepository {
   constructor(private readonly storage: Storage) {}
 
-  getParts(): Promise<Part[] | null> {
-    return Promise.resolve(this.storage.getItem(key) as Part[] | null);
+  async getParts(): Promise<Part[] | []> {
+    if (this.storage.length > 0) {
+      return JSON.parse(this.storage.getItem(key) as string);
+    }
+    return []
   }
 
-  getPart(partId: string): Promise<Part> {
-    const parts = Promise.resolve(this.storage.getItem(key) as Part[] | null);
-    console.log("PARTS", parts);
-    return parts as any;
+  async getPart(partId: string): Promise<string | null> {
+    const parts = await this.storage.getItem(key);
+    return parts;
   }
 
   addPart(part: Part): Promise<void> {

@@ -17,6 +17,7 @@ export class AddPartUseCase {
 
     if (!errors.size) {
       const part = new PartBuilder()
+        .withColor(addPartRequest.color)
         .withOwnerName(addPartRequest.ownerName)
         .withCreatorName(addPartRequest.creatorName)
         .build();
@@ -28,6 +29,11 @@ export class AddPartUseCase {
 
   validate(addPartRequest: AddPartRequest, presenter: AddPartPresentation) {
     const errors = new Map<NewPartFields, string>();
+
+    if (addPartRequest.color == null || !addPartRequest.color.length) {
+      errors.set(NewPartFields.color, "Color is required");
+    }
+
     if (addPartRequest.ownerName == null || !addPartRequest.ownerName.length) {
       errors.set(NewPartFields.ownerName, "Owner name is required");
     }

@@ -4,8 +4,8 @@ import { type InjectionKey } from 'vue'
 //   PartRepositoryLocalStorage
 // } from '@ichtus/breakfeastwheel-adapters'
 // import { GetPartsUseCase } from '@ichtus/breakfeastwheel-domain'
-import { PartsControllerFactory, PartRepositoryLocalStorage } from '../../../adapters'
-import { GetPartsUseCase } from '@ichtus/breakfeastwheel-domain'
+import { PartsControllerFactory, PartRepositoryLocalStorage } from '../../../adapters/src/index'
+import { GetPartsUseCase } from '../../../domain/src/index'
 
 export const PARTS_CONTROLLER_FACTORY: InjectionKey<PartsControllerFactory> = Symbol()
 

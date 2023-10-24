@@ -3,6 +3,8 @@ import { Part } from "../../entities/part/Part";
 export enum NewPartFields {
   ownerName = "ownerName",
   creatorName = "creatorName",
+  color = "color",
+
 }
 
 export type AddPartErrors = Map<NewPartFields, string>;

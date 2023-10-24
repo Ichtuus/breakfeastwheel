@@ -1,9 +1,9 @@
 import { Part } from "../../entities/part/Part";
 
 export interface PartRepository {
-  getParts(): Promise<Part[] | null>;
+  getParts(): Promise<Part[] | []>;
 
-  getPart(partId: string): Promise<Part>;
+  getPart(partId: string): Promise<string | null>;
 
   addPart(part: Part): Promise<void>;
 }
