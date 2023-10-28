@@ -2,7 +2,7 @@ import { GetPartsPresentation, Part } from "@breakfeastwheel-domain";
 import { Presenter } from "./Presenter";
 
 export class PartsPresenterVM {
-  parts: Part[] | undefined;
+  data: { parts: Part[], gradiant: string[] } | undefined;
 }
 
 export class PartsPresenter
@@ -13,8 +13,8 @@ export class PartsPresenter
     super(new PartsPresenterVM());
   }
 
-  displayParts(parts: Part[]): void {
-    this.vm.parts = parts;
+  displayParts(data: {parts: Part[], gradiant: string[] }): void {
+    this.vm.data = data;
     this.notifyVM();
   }
 }

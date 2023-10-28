@@ -1,6 +1,6 @@
-import { GetPartsUseCase } from "domain/src/usecases/GetParts.usecase";
-import { PartsController } from "./PartsController";
-import { PartsPresenter } from "../presenters/PartsPresenter";
+import { GetPartsUseCase } from "domain/src/usecases/GetPartsUsecase";
+import { PartsController } from "../PartsController";
+import { PartsPresenter } from "../../presenters/PartsPresenter";
 
 export class PartsControllerFactory {
   constructor(private getPartsUseCase: GetPartsUseCase) {}

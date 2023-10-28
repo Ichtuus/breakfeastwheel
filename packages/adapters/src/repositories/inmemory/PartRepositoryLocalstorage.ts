@@ -6,11 +6,24 @@ const key = "ALL_PARTS";
 export class PartRepositoryLocalStorage implements PartRepository {
   constructor(private readonly storage: Storage) {}
 
-  async getParts(): Promise<Part[] | []> {
+  async getParts(): Promise<{ parts: Part[]; gradiant: string } | null> {
     if (this.storage.length > 0) {
-      return JSON.parse(this.storage.getItem(key) as string);
+      const parts = JSON.parse(this.storage.getItem(key) as string);
+
+      const gradiant = parts
+        .map(
+          ({ color }, i) =>
+            `${color ? color : "red"} 0 ${
+              (100 / parts.length) * (parts.length - i)
+            }%`
+        )
+        .reverse();
+      return {
+        parts: JSON.parse(this.storage.getItem(key) as string),
+        gradiant: gradiant,
+      };
     }
-    return []
+    return null;
   }
 
   async getPart(partId: string): Promise<string | null> {
@@ -18,7 +31,21 @@ export class PartRepositoryLocalStorage implements PartRepository {
     return parts;
   }
 
-  addPart(part: Part): Promise<void> {
-    throw new Error("Method not implemented.");
+  addPart(part: Part) {
+    if (!this.storage.getItem(key)) {
+      this.storage.setItem(key, JSON.stringify([part]));
+    }
+
+    const parts = JSON.parse(this.storage.getItem(key) as string);
+    const isPartExist = this.checkPartExist(part.id, parts);
+
+    if (!isPartExist) {
+      parts.push(part);
+      this.storage.setItem(key, JSON.stringify(parts));
+    }
+  }
+
+  private checkPartExist(partId: string, parts: Part[]): boolean {
+    return parts.some((part) => part.id === partId);
   }
 }

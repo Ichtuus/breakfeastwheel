@@ -1,5 +1,5 @@
 import { Part } from "domain/src/entities/part/Part";
 
 export interface GetPartsPresentation {
-  displayParts(parts: Part[]): void;
+  displayParts(parts: { parts: Part[]; gradiant: string[] }): void;
 }

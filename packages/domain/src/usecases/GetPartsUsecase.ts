@@ -5,9 +5,9 @@ export class GetPartsUseCase {
   constructor(private partRepository: PartRepository) {}
 
   async execute(presentation: GetPartsPresentation) {
-    const parts = await this.partRepository.getParts();
-    if (parts) {
-      presentation.displayParts(parts);
+    const data = await this.partRepository.getParts();
+    if (data) {
+      presentation.displayParts({parts: data.parts, gradiant: data.gradiant});
     }
   }
 }
