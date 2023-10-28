@@ -6,7 +6,7 @@ const key = "ALL_PARTS";
 export class PartRepositoryLocalStorage implements PartRepository {
   constructor(private readonly storage: Storage) {}
 
-  async getParts(): Promise<{ parts: Part[]; gradiant: string } | null> {
+  async getParts(): Promise<{ parts: Part[]; gradiant: string[] } | null> {
     if (this.storage.length > 0) {
       const parts = JSON.parse(this.storage.getItem(key) as string);
 
