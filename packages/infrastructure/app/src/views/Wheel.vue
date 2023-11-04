@@ -84,7 +84,6 @@ function generateRandomHexColor() {
 <template>
   <div class="nad-bfw__content-wheel">
     <div class="nad-bfw__wheel">
-
       <q-btn v-if="actualParts.length" @click="resetWheel" label="Clear" color="deep-orange" />
 
       <ul
@@ -179,5 +178,8 @@ function generateRandomHexColor() {
     --rotate: -247deg;
     background-color: red !important;
   }
+}
+li div {
+  transform: rotate(180deg);
 }
 </style>
