@@ -45,6 +45,11 @@ export class PartRepositoryLocalStorage implements PartRepository {
     }
   }
 
+  deleteParts(): { parts: []; gradiant: [] } {
+    this.storage.clear();
+    return { parts: [], gradiant: [] };
+  }
+
   private checkPartExist(partId: string, parts: Part[]): boolean {
     return parts.some((part) => part.id === partId);
   }

@@ -46,6 +46,12 @@ onMounted(() => {
 
 function createPart() {
   isOnCreatedPart.value = true
+  const isCreatedPartExist = (actualParts as Ref<TmpPart[]>).value.find((part) => part.tmpPart)
+
+  if (isOnCreatedPart.value && isCreatedPartExist) {
+    return
+  }
+
   ;(actualParts as Ref<TmpPart[]>).value.push({
     owner: 'Owner name',
     creator: 'Creator name',
@@ -59,6 +65,16 @@ function create() {
   displayWheelController.fetchParts()
 }
 
+function resetCreateProcess() {
+  isOnCreatedPart.value = false
+  ;(actualParts as Ref<TmpPart[]>).value.pop()
+}
+
+function resetWheel() {
+  displayWheelController.deleteParts()
+  displayWheelController.fetchParts()
+}
+
 function generateRandomHexColor() {
   const randomColor = Math.floor(Math.random() * 16777215).toString(16)
   return `#${randomColor.padStart(6, '0')}`
@@ -68,6 +84,9 @@ function generateRandomHexColor() {
 <template>
   <div class="nad-bfw__content-wheel">
     <div class="nad-bfw__wheel">
+
+      <q-btn v-if="actualParts.length" @click="resetWheel" label="Clear" color="deep-orange" />
+
       <ul
         @click="createPart"
         :class="{ 'created-part': isOnCreatedPart }"
@@ -90,6 +109,7 @@ function generateRandomHexColor() {
     <create-part-form
       v-if="isOnCreatedPart && tmpPart"
       @startCreatePartProcess="create"
+      @cancelCreatePartProcess="resetCreateProcess"
       :add-part-in-wheel-v-m="addPartInWheelVM"
       :add-part-in-wheel-controller="addPartInWheelController"
       :tmp-part="tmpPart"
@@ -104,6 +124,7 @@ function generateRandomHexColor() {
   place-items: center;
   overflow: hidden;
   justify-content: center;
+  height: 100vh;
 }
 
 .nad-bfw__wheel {

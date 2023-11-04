@@ -1,5 +1,6 @@
 export * from "./usecases/AddPartUsecase";
 export * from "./usecases/GetPartsUsecase";
+export * from "./usecases/DeletePartsUseCase";
 
 export * from "./entities/part/Part";
 export * from "./entities/part/PartBuilder";

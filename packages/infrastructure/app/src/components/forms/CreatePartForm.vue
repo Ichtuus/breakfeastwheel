@@ -44,7 +44,6 @@ function validateColor(input: any) {
         :rules="[(val) => (val && val.length > 0) || 'Please type something']"
       />
 
-
       <q-input
         filled
         v-model="props.tmpPart.color"
@@ -53,6 +52,13 @@ function validateColor(input: any) {
         hint="Color"
         lazy-rules
         :rules="[(val) => (val && val.length > 0) || 'Please type something']"
+      />
+
+      <q-btn
+        @click="$emit('cancelCreatePartProcess')"
+        label="Cancel"
+        text-color="black"
+        color="standard"
       />
 
       <q-btn
